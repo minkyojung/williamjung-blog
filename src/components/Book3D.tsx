@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import Link from 'next/link'
 import gsap from 'gsap'
 
 interface Book3DProps {

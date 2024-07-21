@@ -28,8 +28,9 @@ export default function BookPage({ params }: BookPageProps) {
 function getBookInfo(slug: string) {
   // 예시 데이터
   const books = {
-    'book-1': { title: '첫 번째 책', description: '첫 번째 책에 대한 설명' },
-    'book-2': { title: '두 번째 책', description: '두 번째 책에 대한 설명' },
+    'writing': { title: '글쓰기', description: '글쓰기에 대한 설명' },
+    'capturing': { title: '촬영', description: '촬영에 대한 설명' },
+    'making': { title: '제작', description: '제작에 대한 설명' },
   }
   return books[slug as keyof typeof books] || null
 }

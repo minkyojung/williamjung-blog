@@ -67,3 +67,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+body, html {
+  background-color: #090909;
+  min-height: 100vh;
+}
