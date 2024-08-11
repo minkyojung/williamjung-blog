@@ -31,8 +31,20 @@ export default function Home() {
     }
   ]
 
-  const handleBookClick = (book: { slug: string }) => {
-    router.push(`/book/${book.slug}`)
+  const handleBookClick = (slug: string) => {
+    switch(slug) {
+      case 'capturing':
+        router.push('/capturing');
+        break;
+      case 'writing':
+        window.location.href = 'https://williamjung0130.substack.com/';
+        break;
+      case 'making':
+        router.push('/making');
+        break;
+      default:
+        router.push('/');
+    }
   }
 
   return (
@@ -42,7 +54,7 @@ export default function Home() {
         {books.map((book) => (
           <div 
             key={book.slug} 
-            onClick={() => handleBookClick(book)}
+            onClick={() => handleBookClick(book.slug)}
             className="cursor-pointer hover:opacity-80 transition-opacity duration-300"
           >
             <Book3D 
