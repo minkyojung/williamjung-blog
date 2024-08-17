@@ -11,7 +11,7 @@ interface Book3DProps {
   slug: string
 }
 
-export default function Book3D({ frontCover, backCover, spine, slug }: Book3DProps) {
+export default function Book3D({ frontCover, backCover, spine, slug}: Book3DProps) {
   const mountRef = useRef<HTMLDivElement>(null)
   const insideBookRef = useRef<THREE.Mesh | null>(null);
   const bookRef = useRef<THREE.Mesh | null>(null);

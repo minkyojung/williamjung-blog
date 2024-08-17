@@ -32,19 +32,7 @@ export default function Home() {
   ]
 
   const handleBookClick = (slug: string) => {
-    switch(slug) {
-      case 'capturing':
-        router.push('/capturing');
-        break;
-      case 'writing':
-        window.location.href = 'https://williamjung0130.substack.com/';
-        break;
-      case 'making':
-        router.push('/making');
-        break;
-      default:
-        router.push('/');
-    }
+    router.push(`/${slug}`);
   }
 
   return (
@@ -55,7 +43,7 @@ export default function Home() {
           <div 
             key={book.slug} 
             onClick={() => handleBookClick(book.slug)}
-            className="cursor-pointer hover:opacity-80 transition-opacity duration-300"
+            className="cursor-pointer transition-opacity duration-300 hover:opacity-80"
           >
             <Book3D 
               frontCover={book.frontCover}
