@@ -6,7 +6,7 @@ import BookCard from '@/components/BookCard'
 import Link from 'next/link'
 
 const carouselPosts = [
-  { title: "Anxiety", slug: "anxiety", backgroundColor: "#971527" },
+  { title: "How to think", slug: "how-to-think", backgroundColor: "#971527" },
   { title: "Depression", slug: "depression", backgroundColor: "#20481F" },
   { title: "Bipolar", slug: "bipolar", backgroundColor: "#155297" },
   { title: "Eating Disorder", slug: "eating-disorder", backgroundColor: "#966D0D" },
@@ -44,7 +44,7 @@ export default function WritingPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-screen">
       <div 
         className="absolute inset-0 transition-all duration-500 ease-in-out"
         style={{
@@ -57,14 +57,14 @@ export default function WritingPage() {
       />
       
       <div 
-        className={`transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+        className={`transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'} w-full max-w-full overflow-hidden`}
       >
         <Carousel className="w-full">
           <CarouselContent className="-ml-4">
             {carouselPosts.map((post) => (
               <CarouselItem 
                 key={post.slug} 
-                className="pl-4 md:basis-1/4 lg:basis-1/6"
+                className="pl-4 md:basis-1/3 lg:basis-1/4 xl:basis-1/6"
               >
                 <Link href={`/writing/${post.slug}`}>
                   <div className="p-1 flex justify-center items-center h-full">
