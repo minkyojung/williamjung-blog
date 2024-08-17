@@ -49,7 +49,7 @@ export default function CapturingPage() {
         });
       };
     }
-  }, [hoveredIndex]);
+  }, [hoveredIndex, photos, exifData]);
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);

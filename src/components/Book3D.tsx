@@ -18,7 +18,7 @@ export default function Book3D({ frontCover, backCover, spine, slug}: Book3DProp
 
   useEffect(() => {
     if (!mountRef.current) return
-  
+
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(75, 267 / 400, 0.1, 1000)
     const renderer = new THREE.WebGLRenderer({ 
@@ -26,7 +26,7 @@ export default function Book3D({ frontCover, backCover, spine, slug}: Book3DProp
       alpha: true,
       powerPreference: "high-performance"
     })
-  
+
     renderer.setClearColor(0x000000, 0)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(400, 550)  // 크기를 줄임
@@ -119,18 +119,22 @@ insideBook.rotation.x = -0.6 // 내부 책도 같은 각도로 기울입니다.
       }
     }
   
-    mountRef.current.addEventListener('mousemove', onMouseMove)
-  
+    const mountElement = mountRef.current;
+    mountElement.addEventListener('mousemove', onMouseMove)
+
     const animate = () => {
       requestAnimationFrame(animate)
       renderer.render(scene, camera)
     }
-  
+
     animate()
-  
+
     return () => {
-      mountRef.current?.removeChild(renderer.domElement)
-      mountRef.current?.removeEventListener('mousemove', onMouseMove)
+      if (mountElement) {
+        mountElement.removeChild(renderer.domElement)
+        mountElement.removeEventListener('mousemove', onMouseMove)
+      }
+      // 필요한 경우 다른 정리 작업 수행
     }
   }, [frontCover, backCover, spine])
 
