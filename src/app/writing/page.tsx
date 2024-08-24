@@ -6,7 +6,10 @@ import BookCard from '@/components/BookCard'
 import Link from 'next/link'
 
 const carouselPosts = [
-  { title: "How to think", slug: "how-to-think", backgroundColor: "#971527" }
+  { title: "How to think", slug: "how-to-think", backgroundColor: "#971527" },
+  { title: "The Illusion of Job", slug: "illusion-of-job", backgroundColor: "#367055" },
+  { title: "Why We Should Pursue Naturalness Over Stability", slug: "naturalness-n-stability", backgroundColor: "#003DA5" },
+  { title: "Embracing the Perpetual Novice", slug: "embracing-the-perpetual-novice", backgroundColor: "#003DA5" },
 ]
 
 function adjustColor(color: string, opacity: number): string {
