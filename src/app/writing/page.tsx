@@ -6,12 +6,7 @@ import BookCard from '@/components/BookCard'
 import Link from 'next/link'
 
 const carouselPosts = [
-  { title: "How to think", slug: "how-to-think", backgroundColor: "#971527" },
-  { title: "Depression", slug: "depression", backgroundColor: "#20481F" },
-  { title: "Bipolar", slug: "bipolar", backgroundColor: "#155297" },
-  { title: "Eating Disorder", slug: "eating-disorder", backgroundColor: "#966D0D" },
-  { title: "ADHD", slug: "adhd", backgroundColor: "#157997" },
-  { title: "Autism", slug: "autism", backgroundColor: "#F1FF33" }
+  { title: "How to think", slug: "how-to-think", backgroundColor: "#971527" }
 ]
 
 function adjustColor(color: string, opacity: number): string {
@@ -49,7 +44,7 @@ export default function WritingPage() {
         className="absolute inset-0 transition-all duration-500 ease-in-out"
         style={{
           background: activeColor 
-            ? `linear-gradient(180deg, ${adjustColor(activeColor, 0.5)} 30%, #000000 100%)`
+            ? `linear-gradient(180deg, ${adjustColor(activeColor, 0.8)} 30%, #000000 100%)`
             : 'linear-gradient(180deg, transparent 30%, #000000 100%)',
           opacity: activeColor ? 1 : 0,
           pointerEvents: 'none'

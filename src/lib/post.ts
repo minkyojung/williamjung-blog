@@ -7,12 +7,7 @@ import html from 'remark-html';
 const postsDirectory = path.join(process.cwd(), 'src/content/posts');
 
 export const carouselPosts = [
-  { title: "Anxiety", slug: "anxiety", backgroundColor: "#971527" },
-  { title: "Depression", slug: "depression", backgroundColor: "#20481F" },
-  { title: "Bipolar", slug: "bipolar", backgroundColor: "#155297" },
-  { title: "Eating Disorder", slug: "eating-disorder", backgroundColor: "#966D0D" },
-  { title: "ADHD", slug: "adhd", backgroundColor: "#157997" },
-  { title: "Autism", slug: "autism", backgroundColor: "#F1FF33" }
+  { title: "Anxiety", slug: "anxiety", backgroundColor: "#971527" }
 ];
 
 export function getPostBackgroundColor(slug: string): string {
